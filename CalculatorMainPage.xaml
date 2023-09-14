@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.CalculatorMainPage" 
+             Title="Calculator">
+    <Grid Padding="8" RowSpacing="2" ColumnSpacing="2"
+          RowDefinitions="2*,*,*,*,*,*,*"
+          BackgroundColor="{DynamicResource  LightGray}"
+          ColumnDefinitions="*,*,*,*">
+
+        <Label x:Name="CurrentCalculation"
+               FontSize="28"
+               TextColor="OrangeRed"
+               LineBreakMode="NoWrap"
+               Grid.ColumnSpan="4"
+               Text=""
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="Start"
+               Grid.Row="0"/>
+
+        <Label x:Name="resultText"   TextColor="Black"
+               FontSize="64" FontAttributes="Bold" Text="0"
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="End"
+               LineBreakMode="NoWrap"   Grid.ColumnSpan="4" />
+
+        <BoxView BackgroundColor="{DynamicResource  Blue100Accent}" HeightRequest="1"
+                 Grid.Row="0" VerticalOptions="End"
+                 Grid.ColumnSpan="4"
+                 />
+        <Button Text="C" Grid.Row="1" Grid.Column="0" 
+ BackgroundColor="{DynamicResource Blue100Accent}"
+               Clicked="OnClear" />
+        <Button Routing.Route="Page1.xaml" Text="+/-" Grid.Row="1" Grid.Column="1"
+               Clicked="OnNegative" BackgroundColor="{DynamicResource Blue100Accent}" />
+        <Button Text="%" Grid.Row="1" Grid.Column="2"
+         BackgroundColor="{DynamicResource   Blue100Accent}" CornerRadius="40"
+                Clicked="OnPercentage" />
+
+        <Button Text="√" Grid.Row="2"  CornerRadius="40" BackgroundColor="{DynamicResource Blue100Accent}" Grid.Column="0"
+               Clicked="OnSquareRoot" />
+        <Button Text="mod" Grid.Row="2" CornerRadius="40" BackgroundColor="{DynamicResource Blue100Accent}" Grid.Column="1"
+               Clicked="OnNegative" />
+        <Button Text="(" Grid.Row="2" CornerRadius="40" BackgroundColor="{DynamicResource  Blue100Accent}" Grid.Column="2"
+            
+                   />
+
+        <Button BorderWidth="1" CornerRadius="40" Text=")" Grid.Row="2" BackgroundColor="{ DynamicResource Blue100Accent}" Grid.Column="3"
+                   />
+
+
+        <Button Text="7" Grid.Row="3" Grid.Column="0"
+               Clicked="OnSelectNumber" />
+        <Button Text="8" Grid.Row="3" Grid.Column="1"
+               Clicked="OnSelectNumber" />
+        <Button Text="9" Grid.Row="3" Grid.Column="2"
+               Clicked="OnSelectNumber" />
+
+        <Button Text="4" Grid.Row="4" Grid.Column="0"
+              Clicked="OnSelectNumber" />
+        <Button Text="5" Grid.Row="4" Grid.Column="1"
+              Clicked="OnSelectNumber" />
+        <Button Text="6" Grid.Row="4" Grid.Column="2"
+              Clicked="OnSelectNumber" />
+
+        <Button Text="1" Grid.Row="5" Grid.Column="0"
+              Clicked="OnSelectNumber" />
+        <Button Text="2" Grid.Row="5" Grid.Column="1"
+              Clicked="OnSelectNumber" />
+        <Button Text="3" Grid.Row="5" Grid.Column="2"
+              Clicked="OnSelectNumber" />
+
+        <Button Text="00" Grid.Row="6" Grid.Column="0" 
+              Clicked="OnSelectNumber" BackgroundColor="{DynamicResource Blue100Accent}" />
+        <Button Text="0" Grid.Row="6" Grid.Column="1" 
+              Clicked="OnSelectNumber" />
+        <Button Text="." Grid.Row="6" Grid.Column="2" 
+              Clicked="OnSelectNumber" />
+
+        <Button Text="÷" Grid.Row="1" Grid.Column="3"
+               Clicked="OnSelectOperator" BackgroundColor="{DynamicResource Blue100Accent}" />
+        <Button Text="×" Grid.Row="6" Grid.Column="3"
+               Clicked="OnSelectOperator" BackgroundColor="{DynamicResource Blue100Accent}" />
+        <Button Text="-" Grid.Row="3" Grid.Column="3"
+               Clicked="OnSelectOperator" BackgroundColor="{DynamicResource Blue100Accent}" />
+        <Button Text="+" Grid.Row="4" Grid.Column="3"
+               Clicked="OnSelectOperator"  BackgroundColor="{DynamicResource Blue100Accent}"/>
+
+
+
+
+        <Button Text="=" Grid.Row="5" Grid.Column="3" 
+               Clicked="OnCalculate" />
+
+    </Grid>
+</ContentPage>
